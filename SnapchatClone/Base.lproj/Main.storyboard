@@ -203,6 +203,46 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O7Q-KC-sfx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="toCell" rowHeight="502" id="Swf-bx-aRL" customClass="CellVC" customModule="SnapchatClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="502"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Swf-bx-aRL" id="nF2-Qi-brm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="UeZ-oR-58e">
+                                                    <rect key="frame" x="53" y="46" width="269" height="410"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uY-h8-M2y">
+                                                            <rect key="frame" x="0.0" y="0.0" width="269" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kjg-8M-VCU">
+                                                            <rect key="frame" x="0.0" y="86.5" width="269" height="323.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="269" id="D66-NL-zD5"/>
+                                                                <constraint firstAttribute="height" constant="323.5" id="e2p-mM-gZE"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UeZ-oR-58e" firstAttribute="top" secondItem="nF2-Qi-brm" secondAttribute="topMargin" constant="35" id="3Ny-Mp-Zx4"/>
+                                                <constraint firstItem="UeZ-oR-58e" firstAttribute="leading" secondItem="nF2-Qi-brm" secondAttribute="leadingMargin" constant="38" id="KyI-tF-Cye"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UeZ-oR-58e" secondAttribute="trailing" constant="38" id="mO2-rj-lPn"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UeZ-oR-58e" secondAttribute="bottom" constant="35" id="rtA-c0-Cu9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="feedImageView" destination="Kjg-8M-VCU" id="YbR-5b-0ic"/>
+                                            <outlet property="usernameLbl" destination="6uY-h8-M2y" id="KxE-qe-a6D"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -222,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFc-TA-DaP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1897" y="-205"/>
+            <point key="canvasLocation" x="1896.8" y="-205.54722638680661"/>
         </scene>
         <!--SnapVC-->
         <scene sceneID="PMt-dm-i5P">

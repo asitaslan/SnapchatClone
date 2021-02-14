@@ -10,6 +10,8 @@
 		000D41C025D8013600685B74 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000D41BF25D8013600685B74 /* FeedVC.swift */; };
 		000D41C225D8015900685B74 /* UploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000D41C125D8015900685B74 /* UploadVC.swift */; };
 		000D41C425D8016F00685B74 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000D41C325D8016F00685B74 /* SettingVC.swift */; };
+		001AAD5125D9A06B0099022D /* CellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001AAD5025D9A06B0099022D /* CellVC.swift */; };
+		001AAD5325D9B58C0099022D /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001AAD5225D9B58C0099022D /* Snap.swift */; };
 		003CC81725D809410092405B /* snapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003CC81625D809410092405B /* snapVC.swift */; };
 		003F20FC25D5759C00330E80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003F20FB25D5759C00330E80 /* AppDelegate.swift */; };
 		003F20FE25D5759C00330E80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003F20FD25D5759C00330E80 /* SceneDelegate.swift */; };
@@ -26,6 +28,8 @@
 		000D41BF25D8013600685B74 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		000D41C125D8015900685B74 /* UploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVC.swift; sourceTree = "<group>"; };
 		000D41C325D8016F00685B74 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		001AAD5025D9A06B0099022D /* CellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVC.swift; sourceTree = "<group>"; };
+		001AAD5225D9B58C0099022D /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 		003CC81625D809410092405B /* snapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snapVC.swift; sourceTree = "<group>"; };
 		003F20F825D5759C00330E80 /* SnapchatClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapchatClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		003F20FB25D5759C00330E80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 				000D41C125D8015900685B74 /* UploadVC.swift */,
 				000D41C325D8016F00685B74 /* SettingVC.swift */,
 				003CC81625D809410092405B /* snapVC.swift */,
+				001AAD5025D9A06B0099022D /* CellVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				0063112F25D94AA800F061A8 /* UserSingleton.swift */,
+				001AAD5225D9B58C0099022D /* Snap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,10 +256,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0063113025D94AA800F061A8 /* UserSingleton.swift in Sources */,
+				001AAD5325D9B58C0099022D /* Snap.swift in Sources */,
 				003F210025D5759C00330E80 /* SignInVC.swift in Sources */,
 				000D41C425D8016F00685B74 /* SettingVC.swift in Sources */,
 				000D41C025D8013600685B74 /* FeedVC.swift in Sources */,
 				003F20FC25D5759C00330E80 /* AppDelegate.swift in Sources */,
+				001AAD5125D9A06B0099022D /* CellVC.swift in Sources */,
 				000D41C225D8015900685B74 /* UploadVC.swift in Sources */,
 				003CC81725D809410092405B /* snapVC.swift in Sources */,
 				003F20FE25D5759C00330E80 /* SceneDelegate.swift in Sources */,
