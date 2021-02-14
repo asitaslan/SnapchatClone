@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -43,7 +44,51 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     @IBAction func uploadButtonClicked(_ sender: Any) {
         
+        let storage = Storage.storage()
+        let storageReferance = storage.reference()
         
+        let mediaFolder = storageReferance.child("media")
+        
+        if let data = uploadImage.image?.jpegData(compressionQuality: 0.5){
+            
+            let uuid = UUID().uuidString
+            let imageReferance = mediaFolder.child("\(uuid).jpg")
+            
+            imageReferance.putData(data, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    self.makeAlert(titleInput: "ERROR", messageInput: error?.localizedDescription ?? "EROOR")
+                }else{
+                    imageReferance.downloadURL { (url, error) in
+                        if error == nil {
+                            
+                            let imageUrl = url?.absoluteString
+                            let snapDictonary = ["imageUrl": imageUrl!, "snapOwner" : UserSingleton.sharedUserInfo.userName, "date": FieldValue.serverTimestamp()] as [String: Any]
+                            
+                            let fireStore = Firestore.firestore()
+                            
+                            fireStore.collection("Snaps").addDocument(data: snapDictonary) { (error) in
+                                if error != nil {
+                                    self.makeAlert(titleInput: "ERROR", messageInput: error?.localizedDescription ?? "Error")
+                                }else{
+                                    self.tabBarController?.selectedIndex = 0
+                                    self.uploadImage.image = UIImage(named: "selected")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+        
+        
+    }
+    func makeAlert(titleInput: String, messageInput: String){
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert,animated: true, completion: nil)
     }
     
 }
