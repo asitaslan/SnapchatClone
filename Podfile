@@ -13,4 +13,6 @@ target 'SnapchatClone' do
    pod 'Firebase/Core'
    pod 'Firebase/Storage'
    pod 'SDWebImage', :modular_headers => true
+   pod 'ImageSlideshow', '~> 1.9.0'
+   pod "ImageSlideshow/Kingfisher"
 end
