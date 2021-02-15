@@ -75,6 +75,8 @@ class FeedVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
                         }
                         
                     }
+                    
+                    self.tableView.reloadData()
                 }
                 
                 
@@ -131,7 +133,7 @@ class FeedVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "toCell", for: indexPath) as! CellVC
         cell.usernameLbl.text = snapArray[indexPath.row].username
-        
+        cell.feedImageView.sd_setImage(with: URL(string: self.snapArray[indexPath.row].imageUrlArray[0]))
         
         return cell
        }
