@@ -20,7 +20,7 @@ class FeedVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
     var snapArray = [Snap]()
     
     var choosenSnap : Snap?
-    var timeleft : Int?
+  
     
     
     override func viewDidLoad() {
@@ -68,16 +68,15 @@ class FeedVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
                                                     self.makeAlert(titleInput: "ERROR", messageInput: error?.localizedDescription ?? "error")
                                                 }
                                             }
+                                        }else {
+                                            
+                                            let snap = Snap(username: username, imageUrlArray: imageUrlArray, date: date.dateValue(), timeDifferance: 24 - differance)
+                                            self.snapArray.append(snap)
                                         }
-                                        
-                                        
-                                        self.timeleft = 24 - differance
-                                        
-                                        
+           
                                     }
                                     
-                                    let snap = Snap(username: username, imageUrlArray: imageUrlArray, date: date.dateValue())
-                                    self.snapArray.append(snap)
+                                   
                                     
                                 }
                             }
@@ -152,7 +151,7 @@ class FeedVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
             
             let destinationVC = segue.destination as? snapVC
             destinationVC?.selectedSnap = choosenSnap
-            destinationVC?.selectedTime = self.timeleft
+           
         }
     }
     

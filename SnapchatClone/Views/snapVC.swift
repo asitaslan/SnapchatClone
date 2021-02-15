@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class snapVC: UIViewController {
 
@@ -14,19 +15,40 @@ class snapVC: UIViewController {
     
     var selectedSnap : Snap?
     
-    var selectedTime : Int?
+
         
-        
+    var inputArray = [KingfisherSource]()
         
         
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if let time = selectedTime {
-            timeLbl.text = "Time Left: \(time)"
+
+        if let snap =  selectedSnap {
+            
+            timeLbl.text = "Time Lift: \(snap.timeDifferance)"
+            
+            for imageUrl in snap.imageUrlArray{
+                inputArray.append(KingfisherSource(urlString: imageUrl)!)
+            }
+            
+            let imageSlideShow = ImageSlideshow(frame: CGRect(x: 10, y: 10, width: self.view.frame.width * 0.95, height: self.view.frame.height * 0.90))
+            imageSlideShow.backgroundColor = UIColor.white
+            
+            let pageIndigator = UIPageControl()
+            pageIndigator.currentPageIndicatorTintColor = UIColor.lightGray
+            pageIndigator.pageIndicatorTintColor = UIColor.black
+            imageSlideShow.pageIndicator = pageIndigator
+            
+            
+            
+            
+            imageSlideShow.contentScaleMode = UIViewContentMode.scaleAspectFit
+            imageSlideShow.setImageInputs(inputArray)
+            self.view.addSubview(imageSlideShow)
+            self.view.bringSubviewToFront(timeLbl)
         }
-        
         
         
     }

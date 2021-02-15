@@ -174,9 +174,9 @@ struct KFImageRenderer: View {
                         switch result {
                         case .success(let value):
                             CallbackQueue.mainAsync.execute {
-                                let animation = fadeTransitionDuration(cacheType: value.cacheType)
+                                let animation = self.fadeTransitionDuration(cacheType: value.cacheType)
                                     .map { duration in Animation.linear(duration: duration) }
-                                withAnimation(animation) { isLoaded = true }
+                                withAnimation(animation) { self.isLoaded = true }
                             }
                         case .failure(_):
                             break
@@ -193,6 +193,7 @@ struct KFImageRenderer: View {
                 }
             }
         }
+        return onAppear()
     }
 
     private func shouldApplyFade(cacheType: CacheType) -> Bool {
